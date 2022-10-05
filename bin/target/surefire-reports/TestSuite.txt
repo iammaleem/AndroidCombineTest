@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 3, Time elapsed: 119.854 s <<< FAILURE! - in TestSuite
+setUp(VTChat.VdoTok.VTChat.VdoTok.callTest)  Time elapsed: 119.66 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+An unknown server-side error occurred while processing the command. Original error: Cannot start the 'io.cloudgrey.the_app' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'io.cloudgrey.the_app.MainActivity' or 'io.cloudgrey.the_app.io.cloudgrey.the_app.MainActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'Aleems-MacBook-Pro.local', ip: 'fe80:0:0:0:97:5a67:436b:a442%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_311'
+Driver info: driver.version: AndroidDriver
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'io.cloudgrey.the_app' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'io.cloudgrey.the_app.MainActivity' or 'io.cloudgrey.the_app.io.cloudgrey.the_app.MainActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+    at getResponseForW3CError (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
+    at asyncHandler (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:380:37)
+	at VTChat.VdoTok.VTChat.VdoTok.callTest.setUp(callTest.java:27)
+
