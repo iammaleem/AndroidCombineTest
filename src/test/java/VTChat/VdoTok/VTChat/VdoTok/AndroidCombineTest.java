@@ -80,9 +80,9 @@ public class AndroidCombineTest extends androidCababilities  {
 		//driver.hideKeyboard();
 		//driver.navigate().back();
 		vt_getElement.ClickSignUp.click();
-		String expectedtitle = "ALEEM101";
+		String expectedtitle = "ALEEM";
 		String resulttapTitle = vt_getElement.homeTitle.getText();
-		AssertJUnit.assertEquals(resulttapTitle, expectedtitle, "ALEEM101");
+		AssertJUnit.assertEquals(resulttapTitle, expectedtitle, "ALEEM");
 
 		logger.info("Screen Title is" + expectedtitle);
 /*******************
