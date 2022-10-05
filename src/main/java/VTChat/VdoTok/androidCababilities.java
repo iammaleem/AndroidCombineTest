@@ -17,8 +17,8 @@ public class androidCababilities {
 
 	public static AndroidDriver<AndroidElement> capabilities() throws MalformedURLException {
 		// TODO Auto-generated method stub
-		File appDir = new File("src/vtFile");
-		File app = new File(appDir, "combineApp kotlin.apk");
+		File appDir = new File("**/app/build/outputs/apk/debug/");
+		File app = new File(appDir, "app-debug.apk");
 		DesiredCapabilities caps = new DesiredCapabilities();
 
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "RF8N209HQRM");
