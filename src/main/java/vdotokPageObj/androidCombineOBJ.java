@@ -67,6 +67,19 @@ public class androidCombineOBJ {
 	@AndroidFindBy(xpath ="//android.widget.ImageView[@content-desc=\"Icon video call\"])[3]")
 	
 	public MobileElement StartCall;
+	
+	
+	
+	
+	@AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
+	
+	public MobileElement CamPermissions;
+	
+	
+	@AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
+	
+	public MobileElement AudioPermissions;
+
 
 
 	@AndroidFindBy(xpath ="//android.view.View[@content-desc=\"Add Group Chat\"]")
