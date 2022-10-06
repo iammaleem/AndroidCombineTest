@@ -74,18 +74,18 @@ public class AndroidCombineTest extends androidCababilities  {
 
 		WebDriverWait driverWait = new WebDriverWait (driver, 10);
 		//vt_getElement.EnterUser.click();
-		vt_getElement.EnterUser.sendKeys("one@gmail.com");
+		vt_getElement.EnterUser.sendKeys("al33m");
 		vt_getElement.EnterPassword.click();
 		vt_getElement.EnterPassword.sendKeys("12345678");
 		//driver.hideKeyboard();
 		//driver.navigate().back();
 		vt_getElement.ClickSignUp.click();
-		String expectedtitle = "ALEEM";
+		String expectedtitle = "AL33M";
 		String resulttapTitle = vt_getElement.homeTitle.getText();
-		AssertJUnit.assertEquals(resulttapTitle, expectedtitle, "ALEEM");
+		AssertJUnit.assertEquals(resulttapTitle, expectedtitle, "AL33M");
 
 		logger.info("Screen Title is" + expectedtitle);
-/*******************
+
 
 		if( vt_getElement.homeTitle.isDisplayed() )
 			{
@@ -104,6 +104,15 @@ public class AndroidCombineTest extends androidCababilities  {
 		vt_getElement.openChatGroup.click();
 		
 		vt_getElement.startGroupCall.click();
+		
+		//driverWait.wait(1000);
+		
+		vt_getElement.CamPermissions.click();
+		
+		
+		vt_getElement.AudioPermissions.click();
+
+
 		//driver.startAudioRecording(new AndroidStartAudioRecordingOptions).
 
 		((CanRecordScreen)driver).startRecordingScreen(new AndroidStartScreenRecordingOptions()
@@ -128,9 +137,7 @@ public class AndroidCombineTest extends androidCababilities  {
 		Thread.sleep(10000);
 		driver.executeScript("mobile: stopScreenStreaming");
 
-**********************/
 		/*
-		
 		
 		vt_getElement.CreateGroup.click();
 		String expectedGroupTitle = "Create Group Chat";
@@ -153,6 +160,7 @@ public class AndroidCombineTest extends androidCababilities  {
 		//driver.findElementByCssSelector("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"About the accommodation & rules\").instance(0))");
 
 		vt_getElement.SaveTitle.click();
+		*/
 		vt_getElement.startTyping.click();
 		vt_getElement.startTyping.sendKeys("Smoke test is in progress");
 		vt_getElement.sendMessage.click();
@@ -170,7 +178,6 @@ public class AndroidCombineTest extends androidCababilities  {
 		vt_getElement.clickLogout.click();
 		logger.info("User Logged Out Successfully");
 		logger.debug("Test Action Button");
-		*/
 		}
 
 }
