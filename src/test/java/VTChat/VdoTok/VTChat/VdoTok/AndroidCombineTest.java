@@ -44,140 +44,92 @@ import vdotokPageObj.androidCombineOBJ;
 public class AndroidCombineTest extends androidCababilities  {
 	
 @Test
-		public void SmokeAndroidCombine() throws InterruptedException, IOException {
-		// TODO Auto-generated method stub
-		AppiumDriver<AndroidElement> driver=capabilities();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Logger logger = Logger.getLogger("");
-		//PropertyConfigurator.configure("/Users/aleem/Documents/vdotokWeb/log.properties");
-		androidCombineOBJ vt_getElement = new androidCombineOBJ(driver);
-		
-		/*
-		String expectedtapSignup = "Sign In";
-		String resulttapSignup = VdoTokSmoke.SignUpTitle.getText();
-		AssertJUnit.assertEquals(resulttapSignup, expectedtapSignup, "Sign In");
-		//System.out.println(resulttapAccommodation);
-		System.out.println(resulttapSignup);
-		*/
+	public void SmokeTest() throws MalformedURLException, InterruptedException {
+	// TODO Auto-generated method stub
+	AppiumDriver<AndroidElement> driver=capabilities();
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	Logger logger = Logger.getLogger("");
+	
+	//PropertyConfigurator.configure("/Users/aleem/Documents/vdotokWeb/log.properties");
+	
+	Smoke VdoTokSmoke = new Smoke(driver);
+	
+	/*
+	String expectedtapSignup = "Sign In";
+	String resulttapSignup = VdoTokSmoke.SignUpTitle.getText();
+	AssertJUnit.assertEquals(resulttapSignup, expectedtapSignup, "Sign In");
+	//System.out.println(resulttapAccommodation);
+	System.out.println(resulttapSignup);
+	*/
 
-		//MobileElement loginButton = driver.findElementByXPath("//android.widget.Button[@content-desc=\"SIGN IN\"]");
+	WebDriverWait driverWait = new WebDriverWait (driver, 10);
+	VdoTokSmoke.EnterUser.click();
+	VdoTokSmoke.EnterUser.sendKeys("al33m");
+	VdoTokSmoke.EnterPassword.click();
+	VdoTokSmoke.EnterPassword.sendKeys("12345678");
+	driver.hideKeyboard();
+	//driver.navigate().back();
+	VdoTokSmoke.ClickSignUp.click();
+	String expectedtitle = "AL33M";
+	String resulttapTitle = VdoTokSmoke.homeTitle.getText();
+	AssertJUnit.assertEquals(resulttapTitle, expectedtitle, "AL33M");
 
-		//loginButton.click();
-		Map<String, Object> args = new HashMap<>();
-		args.put("width", 1080);
-		args.put("height", 1920);
-		args.put("considerRotation", true);
-		args.put("quality", 45);
-		args.put("bitRate", 500000);
-		driver.executeScript("mobile: startScreenStreaming", args);
-		
-
-		WebDriverWait driverWait = new WebDriverWait (driver, 10);
-		//vt_getElement.EnterUser.click();
-		vt_getElement.EnterUser.sendKeys("al33m");
-		vt_getElement.EnterPassword.click();
-		vt_getElement.EnterPassword.sendKeys("12345678");
-		//driver.hideKeyboard();
-		//driver.navigate().back();
-		vt_getElement.ClickSignUp.click();
-		String expectedtitle = "AL33M";
-		String resulttapTitle = vt_getElement.homeTitle.getText();
-		AssertJUnit.assertEquals(resulttapTitle, expectedtitle, "AL33M");
-
-		logger.info("Screen Title is" + expectedtitle);
+	logger.info("Screen Title is" + expectedtitle);
 
 
-		if( vt_getElement.homeTitle.isDisplayed() )
-			{
-			System.out.println("Landed on Home Screen");
-			}
-			else
-			{
-			System.out.println("Navigation Failed");
-
-			}
-	//	vt_getElement.AddGroup.click();
-		logger.info("Group Opened");
-		//logger.error("Accommodation button is not click able");
-		//logger.debug("Test Action Button");
-		
-		vt_getElement.openChatGroup.click();
-		
-		vt_getElement.startGroupCall.click();
-		
-		//driverWait.wait(1000);
-		
-		vt_getElement.CamPermissions.click();
-		
-		
-		vt_getElement.AudioPermissions.click();
-
-
-		//driver.startAudioRecording(new AndroidStartAudioRecordingOptions).
-
-		((CanRecordScreen)driver).startRecordingScreen(new AndroidStartScreenRecordingOptions()
-				.withVideoSize("720x1280"));
-				//.withUploadOptions("/Users/aleem/Desktop/new.mp4"));
-
-		Thread.sleep(20000);
-		
-		//driver.executeScript("mobile: stopScreenStreaming");
-		
-		//((CanRecordScreen)driver).stopRecordingScreen(new AndroidStopScreenRecordingOptions().withUploadOptions(ScreenRecordingUploadOptions.uploadOptions()));
-
-		
-
-		String base64String = ((CanRecordScreen)driver).stopRecordingScreen();
-		byte[] data = Base64.decodeBase64(base64String);
-		String
-		destinationPath="/Users/aleem/Desktop/SessionRecorded.mp4";
-		Path path = Paths.get(destinationPath);
-		Files.write(path, data);
-		
-		Thread.sleep(10000);
-		driver.executeScript("mobile: stopScreenStreaming");
-
-		/*
-		
-		vt_getElement.CreateGroup.click();
-		String expectedGroupTitle = "Create Group Chat";
-		String resulttapGroupTitle = vt_getElement.createGroupTitle.getText();
-		AssertJUnit.assertEquals(resulttapGroupTitle, expectedGroupTitle, "Create Group Chat");
-		logger.info("Screen Title is " + expectedGroupTitle);
-
-		// System.out.println(expectedGroupTitle);
-		vt_getElement.SelectParticipantsA.click();
-		logger.debug("Test Action Button");
-
-		vt_getElement.SelectParticipantsB.click();
-
-
-		vt_getElement.TickToCreateChat.click();
-		vt_getElement.enterGroupTitle.click();
-		vt_getElement.enterGroupTitle.sendKeys("Aleem@Norgic");
-		logger.info("Screen Title is " + expectedGroupTitle);
-
-		//driver.findElementByCssSelector("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"About the accommodation & rules\").instance(0))");
-
-		vt_getElement.SaveTitle.click();
-		*/
-		vt_getElement.startTyping.click();
-		vt_getElement.startTyping.sendKeys("Smoke test is in progress");
-		vt_getElement.sendMessage.click();
-		vt_getElement.startTyping.sendKeys("Thank You");
-		vt_getElement.sendMessage.click();
-
-		//driver.findElementByCssSelector("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"About the accommodation & rules\").instance(0))");
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.hideKeyboard();
-		driver.navigate().back();
-
-		//driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@content-desc=\\\"LOG OUT\\\"]")));
-		vt_getElement.clickLogout.click();
-		logger.info("User Logged Out Successfully");
-		logger.debug("Test Action Button");
+	if( VdoTokSmoke.homeTitle.isDisplayed() )
+		{
+		System.out.println("Landed on Home Screen");
 		}
+		else
+		{
+		System.out.println("Navigation Failed");
 
-}
+		}
+	VdoTokSmoke.OpenGroup.click();
+	logger.info("Group Opened");
+	//logger.error("Accommodation button is not click able");
+	//logger.debug("Test Action Button");
+	/*
+	VdoTokSmoke.CreateGroup.click();
+	String expectedGroupTitle = "Create Group Chat";
+	String resulttapGroupTitle = VdoTokSmoke.createGroupTitle.getText();
+	AssertJUnit.assertEquals(resulttapGroupTitle, expectedGroupTitle, "Create Group Chat");
+	logger.info("Screen Title is " + expectedGroupTitle);
+
+	// System.out.println(expectedGroupTitle);
+	VdoTokSmoke.SelectParticipantsA.click();
+	logger.debug("Test Action Button");
+
+	VdoTokSmoke.SelectParticipantsB.click();
+
+
+	VdoTokSmoke.TickToCreateChat.click();
+	VdoTokSmoke.enterGroupTitle.click();
+	VdoTokSmoke.enterGroupTitle.sendKeys("Aleem@Norgic");
+	logger.info("Screen Title is " + expectedGroupTitle);
+
+	//driver.findElementByCssSelector("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"About the accommodation & rules\").instance(0))");
+
+	VdoTokSmoke.SaveTitle.click();
+	VdoTokSmoke.startTyping.click();
+	VdoTokSmoke.startTyping.sendKeys("Smoke test is in progress");
+	VdoTokSmoke.sendMessage.click();
+	VdoTokSmoke.startTyping.sendKeys("Thank You");
+	VdoTokSmoke.sendMessage.click();
+
+	//driver.findElementByCssSelector("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"About the accommodation & rules\").instance(0))");
+
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+	driver.hideKeyboard();
+	driver.navigate().back();
+
+	//driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@content-desc=\\\"LOG OUT\\\"]")));
+	VdoTokSmoke.clickLogout.click();
+	logger.info("User Logged Out Successfully");
+	logger.debug("Test Action Button");
+	*/
+	}
+
+	}
