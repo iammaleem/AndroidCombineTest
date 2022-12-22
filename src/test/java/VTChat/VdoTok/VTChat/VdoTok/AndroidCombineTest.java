@@ -86,7 +86,7 @@ public class AndroidCombineTest extends androidCababilities  {
 		System.out.println("Navigation Failed");
 
 		}
-	VdoTokSmoke.OpenGroup.click();
+	VdoTokSmoke.openChatGroup.click();
 	logger.info("Group Opened");
 	//logger.error("Accommodation button is not click able");
 	//logger.debug("Test Action Button");
