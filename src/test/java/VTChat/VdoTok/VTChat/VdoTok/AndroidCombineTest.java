@@ -52,7 +52,7 @@ public class AndroidCombineTest extends androidCababilities  {
 	
 	//PropertyConfigurator.configure("/Users/aleem/Documents/vdotokWeb/log.properties");
 	
-	Smoke VdoTokSmoke = new Smoke(driver);
+	androidCombineOBJ VdoTokSmoke = new androidCombineOBJ(driver);
 	
 	/*
 	String expectedtapSignup = "Sign In";
