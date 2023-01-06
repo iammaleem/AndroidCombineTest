@@ -17,7 +17,7 @@ public class androidCombineCapabilities {
 
 	public static AndroidDriver<AndroidElement> capabilities() throws MalformedURLException {
 		// TODO Auto-generated method stub
-		File appDir = new File("*/app/build/outputs/apk/debug");
+		File appDir = new File("app/build/outputs/apk/debug");
 		File app = new File(appDir, "app-debug.apk");
 		DesiredCapabilities caps = new DesiredCapabilities();
 
